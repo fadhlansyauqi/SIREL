@@ -34,9 +34,15 @@ class AuthController extends Controller
                 Session::flash('message', 'Akun anda belum aktif, silahkan kontak admin!');
                 return redirect('/login');
             }
-            // $request->session()->regenerate();
 
-            // return redirect()->intended('dashboard');
+            // $request->session()->regenerate();
+            if(Auth::user()->role_id == 1) {
+                return redirect('dashboard');
+            }
+
+            if(Auth::user()->role_id == 2) {
+                return redirect('profile');
+            }
         }
 
         Session::flash('status', 'failed');
