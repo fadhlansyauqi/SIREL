@@ -49,4 +49,12 @@ class AuthController extends Controller
         Session::flash('message', 'Username atau password salah!');
         return redirect('/login');
     }
+
+    function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/');
+    }
 }
