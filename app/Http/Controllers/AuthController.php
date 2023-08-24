@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
@@ -68,7 +69,11 @@ class AuthController extends Controller
             'address' => 'required|max:255',
         ]);
 
-        
+        $request['password'] = Hash::make($request->password);
         $user = User::create($request->all());
+
+        Session::flash('status', 'success');
+        Session::flash('message', 'Register Berhasil! Silahkan menunggu persetujuan admin');
+        return redirect('register');
     }
 }

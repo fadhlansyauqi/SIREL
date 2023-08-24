@@ -32,7 +32,13 @@
                     @endforeach
                 </ul>
             </div>
-        @endif    
+        @endif   
+        
+        @if (session('status'))
+            <div class="alert alert-success" style="width: 500px;">
+                {{session('message')}}
+            </div>
+        @endif
         <div class="register-box">
             <form action="" method="post">
                 @csrf
