@@ -17,17 +17,17 @@
             color: white;
         }
 
-        .sidebar ul {
-            list-style: none;
-        }
-
-        .sidebar li {
-            padding: 15px;
-        }
+        
 
         .sidebar a {
             color: #fff;
             text-decoration: none;
+            display: block;
+            padding: 20px 10px;
+        }
+
+        .sidebar a:hover{
+            background: #000 ;
         }
     </style>
     <body>
@@ -46,23 +46,18 @@
             <div class="body-content h-100">
                 <div class="row g-0 h-100">
                     <div class="sidebar col-lg-2 collapse d-lg-block" id="buttonNavbar">
-                        <ul>
                             @if(Auth::user()->role_id == 1)
-                                <li>
-                                    <a href="#">Dahboard</a>
-                                </li>
-                                <li>
-                                    <a href="#">Laptops</a>
-                                </li>
-                                <li>Categories</li>
-                                <li>Users</li>
-                                <li>Rent Log</li>
-                                <li>Logout</li>
+                                <a href="dashboard">Dashboard</a>
+                                <a href="laptops">Laptops</a>
+                                <a href="#">Categories</a>
+                                <a href="#">Users</a>
+                                <a href="#">Rent Log</a>
+                                <a href="logout">Logout</a>
+
                             @else
-                                <li>Profile</li>
-                                <li>Logout</li>
+                                <a href="profile">Profile</a>
+                                <a href="logout">Logout</a>
                             @endif
-                        </ul>
                     </div>
                     <div class="content p-5 col-lg-10">
                         @yield('content')
