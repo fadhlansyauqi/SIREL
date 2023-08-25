@@ -36,7 +36,7 @@
                 <div class="container-fluid">
                     
                     <a class="navbar-brand" href="#">SIREL</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#buttonNavbar" aria-controls="buttonNavbar" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     
@@ -45,7 +45,7 @@
 
             <div class="body-content h-100">
                 <div class="row g-0 h-100">
-                    <div class="sidebar col-2">
+                    <div class="sidebar col-lg-2 collapse d-lg-block" id="buttonNavbar">
                         <ul>
                             @if(Auth::user()->role_id == 1)
                                 <li>
@@ -58,15 +58,13 @@
                                 <li>Users</li>
                                 <li>Rent Log</li>
                                 <li>Logout</li>
-                            
-
                             @else
                                 <li>Profile</li>
                                 <li>Logout</li>
                             @endif
                         </ul>
                     </div>
-                    <div class="content p-5 col-10">
+                    <div class="content p-5 col-lg-10">
                         @yield('content')
                     </div>
                 </div>
