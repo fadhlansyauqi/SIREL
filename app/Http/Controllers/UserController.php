@@ -10,4 +10,9 @@ class UserController extends Controller
     {
         return view('profile');
     }
+
+    function index() 
+    {
+        return view('user');
+    }
 }

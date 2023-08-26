@@ -9,7 +9,7 @@ class LaptopController extends Controller
     function index() 
     {
         
-        dd('ini halaman laptop');    
+       return view('laptop');   
     }
 
 }
