@@ -15,7 +15,7 @@
                     <div class="col-6"><i class="bi bi-journal-bookmark"></i></div>
                     <div class="col-6 d-flex flex-column justify-content-center align-items-end">
                         <div class="card-desc">Laptops</div>
-                        <div class="card-count">109</div>
+                        <div class="card-count">{{$laptop_count}}</div>
                     </div>
                 </div>
             </div>
@@ -27,7 +27,7 @@
                     <div class="col-6"><i class="bi bi-list-task"></i></div>
                     <div class="col-6 d-flex flex-column justify-content-center align-items-end">
                         <div class="card-desc">Categories</div>
-                        <div class="card-count">27</div>
+                        <div class="card-count">{{$category_count}}</div>
                     </div>
                 </div>
             </div>
@@ -39,7 +39,7 @@
                     <div class="col-6"><i class="bi bi-people"></i></div>
                     <div class="col-6 d-flex flex-column justify-content-center align-items-end">
                         <div class="card-desc">Users</div>
-                        <div class="card-count">150</div>
+                        <div class="card-count">{{$user_count}}</div>
                     </div>
                 </div>
             </div>
