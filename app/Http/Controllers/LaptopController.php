@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\laptop;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,9 @@ class LaptopController extends Controller
 
     function add()
     {
-        return view('laptop-add');
+        $categories = Category::all();
+        return view('laptop-add', ['categories' => $categories]);
+        
     }
 
     function store(Request $request)
