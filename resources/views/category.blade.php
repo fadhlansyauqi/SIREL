@@ -33,7 +33,7 @@
                         <td>{{$item->name}}</td>
                         <td>
                             <a href="category-edit/{{$item->slug}}">edit</a>
-                            <a href="#">delete</a>
+                            <a href="category-delete/{{$item->slug}}">delete</a>
                         </td>
                     </tr>
                 @endforeach

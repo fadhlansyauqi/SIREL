@@ -45,4 +45,17 @@ class CategoryController extends Controller
         $category->update($request->all());
         return redirect('categories')->with('status', 'Kategori Berhasil Diperbaharui!');
     }
+
+    function delete($slug)
+    {
+        $category = Category::where('slug', $slug)->first();
+        return view('category-delete', ['category' => $category]);
+        
+    }
+
+    function destroy($slug) {
+        $category = Category::where('slug', $slug)->first();
+        $category->delete();
+        return redirect('categories')->with('status', 'Kategori Berhasil Dihapus!');   
+    }
 }

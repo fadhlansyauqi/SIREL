@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('catetegory', function (Blueprint $table) {
-            $table->string('slug', 255)->after('name');
+        Schema::table('categories', function (Blueprint $table) {
+            $table->softDeletes();
         });
     }
 
@@ -25,10 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('catetegory', function (Blueprint $table) {
-            if (Schema::hasColumn('categories', 'slug')) {
-                $table->dropColumn('slug');
-            }
+        Schema::table('categories', function (Blueprint $table) {
+            $table->dropSoftDeletes();
         });
     }
 };
