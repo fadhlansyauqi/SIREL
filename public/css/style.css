@@ -27,7 +27,7 @@
 
 .active {
     background: #3e566e;
-    border-right: solid 8px #FFDBBF;
+    border-right: solid 8px teal;
 }
 
 .card-data {
