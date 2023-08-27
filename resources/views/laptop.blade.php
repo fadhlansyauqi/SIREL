@@ -38,7 +38,7 @@
                         <td>
                             <a href="#">edit</a>
                             <a href="#">delete</a>
-                        </td>>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>

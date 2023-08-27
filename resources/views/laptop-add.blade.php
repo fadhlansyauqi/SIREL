@@ -21,12 +21,12 @@
             @csrf
             <div class="mb-3">
                 <label for="code" class="form-label">Code</label>
-                <input type="text" name="laptop_code" id="code" class="form-control" placeholder="Laptop Code">
+                <input type="text" name="laptop_code" id="code" class="form-control" placeholder="Laptop Code" value="{{ old('laptop_code')}}">
             </div>
 
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
-                <input type="text" name="title" id="title" class="form-control" placeholder="Laptop title">
+                <input type="text" name="title" id="title" class="form-control" placeholder="Laptop title" value="{{ old('title')}}">
             </div>
 
             <div>

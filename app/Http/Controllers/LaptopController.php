@@ -20,6 +20,11 @@ class LaptopController extends Controller
 
     function store(Request $request)
     {
+        $validated = $request->validate([
+            'laptop_code' => 'required|unique:laptops|max:255',
+            'title' => 'required|max:255',
+        ]);
+
         $laptop = Laptop::create($request->all());
         return redirect('laptops')->with('status', 'Laptop Berhasil Ditambahkan!');
     }
