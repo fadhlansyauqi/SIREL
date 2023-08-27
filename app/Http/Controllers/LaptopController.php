@@ -21,6 +21,6 @@ class LaptopController extends Controller
     function store(Request $request)
     {
         $laptop = Laptop::create($request->all());
-        return redirect('laptops');
+        return redirect('laptops')->with('status', 'Laptop Berhasil Ditambahkan!');
     }
 }
