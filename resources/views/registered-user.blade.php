@@ -3,11 +3,10 @@
 @section('title', 'Users')
 
 @section('content')
-    <h1>User List</h1>
+    <h1>New Registered User List</h1>
 
     <div class="mt-5 d-flex justify-content-end">
-        <a href="#" class="btn btn-secondary me-3">View Banned User</a>
-        <a href="/registered-users" class="btn btn-primary">New Registered User</a>
+        <a href="/users" class="btn btn-primary">Approved User List</a>
     </div>
 
     <div class="my-5">
@@ -21,10 +20,10 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($users as $item)
+                @foreach ($registeredUsers as $item)
                     <tr>
-                        <td>{{$loop->iteration}}</td>
-                        <td>{{$item->username}}</td>
+                        <td>{{ $loop->iteration }}</td>
+                        <td>{{ $item->username }}</td>
                         <td>
                             @if ($item->phone)
                                 {{$item->phone}}
@@ -34,7 +33,6 @@
                         </td>
                         <td>
                             <a href="#">detail</a>
-                            <a href="#">ban user</a>
                         </td>
                     </tr>
                 @endforeach

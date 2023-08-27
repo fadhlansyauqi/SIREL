@@ -29,7 +29,7 @@
                                 <a href="/dashboard" @if(request()->route()->uri == 'dashboard') class='active' @endif>Dashboard</a>
                                 <a href="/laptops" @if(request()->route()->uri == 'laptops' || request()->route()->uri == 'laptop-add' || request()->route()->uri == 'laptop-deleted' || request()->route()->uri == 'laptop-edit/{slug}' || request()->route()->uri == 'laptop-delete/{slug}') class='active' @endif>Laptops</a>
                                 <a href="/categories" @if(request()->route()->uri == 'categories'  || request()->route()->uri == 'category-add' || request()->route()->uri == 'category-deleted' || request()->route()->uri == 'category-edit/{slug}' || request()->route()->uri == 'category-delete/{slug}') class='active' @endif>Categories</a>
-                                <a href="/users"@if(request()->route()->uri == 'users') class='active' @endif>Users</a>
+                                <a href="/users"@if(request()->route()->uri == 'users' || request()->route()->uri == 'registered-users') class='active' @endif>Users</a>
                                 <a href="/rent-logs" @if(request()->route()->uri == 'rent-logs') class='active' @endif>Rent Log</a>
                                 <a href="/logout">Logout</a>
 
