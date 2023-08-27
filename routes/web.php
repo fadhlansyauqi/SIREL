@@ -42,6 +42,8 @@ Route::middleware('auth')->group(function() {
     Route::get('laptops', [LaptopController::class, 'index']);
     Route::get('laptop-add', [LaptopController::class, 'add']);
     Route::post('laptop-add', [LaptopController::class, 'store']);
+    Route::get('laptop-edit/{slug}', [LaptopController::class, 'edit']);
+    Route::post('laptop-edit/{slug}', [LaptopController::class, 'update']);
     
     Route::get('categories', [CategoryController::class, 'index']);
     Route::get('category-add', [CategoryController::class, 'add']);

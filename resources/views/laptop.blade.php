@@ -42,7 +42,7 @@
                         </td>
                         <td>{{$item->status}}</td>
                         <td>
-                            <a href="#">edit</a>
+                            <a href="laptop-edit/{{$item->slug}}">edit</a>
                             <a href="#">delete</a>
                         </td>
                     </tr>

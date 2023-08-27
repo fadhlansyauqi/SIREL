@@ -40,4 +40,30 @@ class LaptopController extends Controller
         $laptop->categories()->sync($request->categories);
         return redirect('laptops')->with('status', 'Laptop Berhasil Ditambahkan!');
     }
+
+    function edit($slug) 
+    {
+        $laptop = Laptop::where('slug', $slug)->first();
+        $categories = Category::all();
+        return view('laptop-edit', ['categories' => $categories, 'laptop' => $laptop]);    
+    }
+
+    function update(Request $request, $slug) 
+    {
+        if($request->file('image')) {
+            $extension = $request->file('image')->getClientOriginalExtension();
+            $newName = $request->title.'-'.now()->timestamp.'.'.$extension;
+            $request->file('image')->storeAs('cover', $newName);
+            $request['cover'] = $newName;
+        }
+        
+        $laptop = Laptop::where('slug', $slug)->first();
+        $laptop->update($request->all());
+
+        if($request->categories) {
+            $laptop->categories()->sync($request->categories);
+        }
+
+        return redirect('laptops')->with('status', 'Laptop Berhasil Diperbaharui!');
+    }
 }
