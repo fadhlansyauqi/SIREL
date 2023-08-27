@@ -61,6 +61,7 @@ Route::middleware('auth')->group(function() {
 
     Route::get('users', [UserController::class, 'index']);
     Route::get('registered-users', [UserController::class, 'registeredUser']);
+    Route::get('user-detail/{slug}', [UserController::class, 'show']);
 
     Route::get('rent-logs', [RentLogController::class, 'index']);
 });
