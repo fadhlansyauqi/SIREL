@@ -79,4 +79,16 @@ class LaptopController extends Controller
         $laptop->delete();
         return redirect('laptops')->with('status', 'Laptop Berhasil Dihapus!');
     }
+    function deletedLaptop()
+    {
+        $deletedLaptops = Laptop::onlyTrashed()->get();
+        return view('laptop-deleted-list',  ['deletedLaptops' => $deletedLaptops]);     
+    }
+
+    function restore($slug) 
+    {
+        $laptop = Laptop::withTrashed()->where('slug', $slug)->first();
+        $laptop->restore(); 
+        return redirect('laptops')->with('status', 'Laptop Berhasil Dipulihkan!'); 
+    }
 }

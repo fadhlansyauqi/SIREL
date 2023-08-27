@@ -6,6 +6,7 @@
     <h1>Laptop List</h1>
 
     <div class="my-5 d-flex justify-content-end">
+        <a href="laptop-deleted" class="btn btn-secondary me-3">View Deleted Data</a>
         <a href="laptop-add" class="btn btn-primary">Add data</a>
     </div>
 
