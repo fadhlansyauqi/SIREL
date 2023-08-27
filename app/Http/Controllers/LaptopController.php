@@ -25,6 +25,15 @@ class LaptopController extends Controller
             'title' => 'required|max:255',
         ]);
 
+        $newName = '';
+        if($request->file('image')) {
+            $extension = $request -> file('image')->getClientOriginalExtension();
+            $newName = $request->title.'-'.now()->timestamp.'.'.$extension;
+            $request->file('image')->storeAs('cover', $newName);
+        }
+
+        $request['cover'] = $newName;
+
         $laptop = Laptop::create($request->all());
         return redirect('laptops')->with('status', 'Laptop Berhasil Ditambahkan!');
     }
