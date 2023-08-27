@@ -26,16 +26,16 @@
                 <div class="row g-0 h-100">
                     <div class="sidebar col-lg-2 collapse d-lg-block" id="buttonNavbar">
                             @if(Auth::user()->role_id == 1)
-                                <a href="dashboard" @if(request()->route()->uri == 'dashboard') class='active' @endif>Dashboard</a>
-                                <a href="laptops" @if(request()->route()->uri == 'laptops') class='active' @endif>Laptops</a>
-                                <a href="categories" @if(request()->route()->uri == 'categories'  || request()->route()->uri == 'category-add' || request()->route()->uri == 'category-deleted' || request()->route()->uri == 'category-edit/{slug}' || request()->route()->uri == 'category-delete/{slug}') class='active' @endif>Categories</a>
-                                <a href="users"@if(request()->route()->uri == 'users') class='active' @endif>Users</a>
-                                <a href="rent-logs" @if(request()->route()->uri == 'rent-logs') class='active' @endif>Rent Log</a>
-                                <a href="logout">Logout</a>
+                                <a href="/dashboard" @if(request()->route()->uri == 'dashboard') class='active' @endif>Dashboard</a>
+                                <a href="/laptops" @if(request()->route()->uri == 'laptops' || request()->route()->uri == 'laptop-add' || request()->route()->uri == 'laptop-deleted' || request()->route()->uri == 'laptop-edit/{slug}' || request()->route()->uri == 'laptop-delete/{slug}') class='active' @endif>Laptops</a>
+                                <a href="/categories" @if(request()->route()->uri == 'categories'  || request()->route()->uri == 'category-add' || request()->route()->uri == 'category-deleted' || request()->route()->uri == 'category-edit/{slug}' || request()->route()->uri == 'category-delete/{slug}') class='active' @endif>Categories</a>
+                                <a href="/users"@if(request()->route()->uri == 'users') class='active' @endif>Users</a>
+                                <a href="/rent-logs" @if(request()->route()->uri == 'rent-logs') class='active' @endif>Rent Log</a>
+                                <a href="/logout">Logout</a>
 
                             @else
-                                <a href="profile"@if(request()->route()->uri == 'profile') class='active' @endif>Profile</a>
-                                <a href="logout">Logout</a>
+                                <a href="/profile"@if(request()->route()->uri == 'profile') class='active' @endif>Profile</a>
+                                <a href="/logout">Logout</a>
                             @endif
                     </div>
                     <div class="content p-5 col-lg-10">

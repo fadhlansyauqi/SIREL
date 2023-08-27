@@ -66,4 +66,17 @@ class LaptopController extends Controller
 
         return redirect('laptops')->with('status', 'Laptop Berhasil Diperbaharui!');
     }
+
+    function delete($slug) 
+    {
+        $laptop = Laptop::where('slug', $slug)->first();
+        return view('laptop-delete', ['laptop' => $laptop]) ;   
+    }
+
+    function destroy($slug)
+    {
+        $laptop = Laptop::where('slug', $slug)->first();
+        $laptop->delete();
+        return redirect('laptops')->with('status', 'Laptop Berhasil Dihapus!');
+    }
 }
