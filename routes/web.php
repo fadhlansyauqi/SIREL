@@ -38,6 +38,7 @@ Route::middleware('auth')->group(function() {
     Route::get('logout', [AuthController::class, 'logout']);
     Route::get('dashboard', [DashboardController::class, 'index'])->middleware('only_admin');
     Route::get('profile', [UserController::class, 'profile'])->middleware('only_client');
+    
     Route::get('laptops', [LaptopController::class, 'index']);
     
     Route::get('categories', [CategoryController::class, 'index']);
