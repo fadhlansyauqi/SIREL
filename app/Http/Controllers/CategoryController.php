@@ -53,9 +53,16 @@ class CategoryController extends Controller
         
     }
 
-    function destroy($slug) {
+    function destroy($slug) 
+    {
         $category = Category::where('slug', $slug)->first();
         $category->delete();
         return redirect('categories')->with('status', 'Kategori Berhasil Dihapus!');   
+    }
+
+    function deletedCategory() 
+    {
+        $deletedCategories = Category::onlyTrashed()->get();
+        return view('category-deleted-list', ['deletedCategories' => $deletedCategories]);    
     }
 }
