@@ -24,6 +24,7 @@
                     <th>No.</th>
                     <th>Code</th>
                     <th>Title</th>
+                    <th>Category</th>
                     <th>Status</th>
                     <th>Action</th>
                 </tr>
@@ -34,6 +35,11 @@
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $item->laptop_code }}</td>
                         <td>{{$item->title}}</td>
+                        <td>
+                            @foreach ($item->categories as $category)
+                                {{$category->name}}
+                            @endforeach
+                        </td>
                         <td>{{$item->status}}</td>
                         <td>
                             <a href="#">edit</a>

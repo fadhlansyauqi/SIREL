@@ -36,8 +36,8 @@ class LaptopController extends Controller
         }
 
         $request['cover'] = $newName;
-
         $laptop = Laptop::create($request->all());
+        $laptop->categories()->sync($request->categories);
         return redirect('laptops')->with('status', 'Laptop Berhasil Ditambahkan!');
     }
 }

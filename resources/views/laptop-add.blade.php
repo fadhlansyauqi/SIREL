@@ -36,8 +36,7 @@
 
             <div class="mb-3">
                 <label for="category" class="form-label">Category</label>
-                <select name="categories" id="category" class="form-control">
-                    <option value="">Choose Category</option>
+                <select name="categories[]" id="category" class="form-control">
                     @foreach ($categories as $item)
                         <option value="{{ $item->id }}">{{$item->name}}</option>
                     @endforeach
