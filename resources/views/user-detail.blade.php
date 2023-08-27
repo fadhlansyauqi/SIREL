@@ -7,10 +7,18 @@
 
     <div class="mt-5 d-flex justify-content-end">
         @if ($user->status == 'inactive')
-        <a href="/users" class="btn btn-info">Approved User</a>
+        <a href="/user-approve/{{$user->slug}}" class="btn btn-info">Approved User</a>
         @endif
     </div>
         
+    <div class="mt-5">
+        @if (session('status'))
+            <div class="alert alert-success">
+                {{session('status')}}
+            </div> 
+        @endif
+    </div>
+
     <div class="my-5 w-25">
         <div class="mb-3">
             <label for="" class="form-label">Username</label>
