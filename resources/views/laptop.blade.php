@@ -5,6 +5,10 @@
 @section('content')
     <h1>Laptop List</h1>
 
+    <div class="my-5 d-flex justify-content-end">
+        <a href="laptop-add" class="btn btn-primary">Add data</a>
+    </div>
+
     <div class="my-5">
         <table class="table">
             <thead>

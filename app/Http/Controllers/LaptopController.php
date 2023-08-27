@@ -13,4 +13,9 @@ class LaptopController extends Controller
        return view('laptop', ['laptops' => $laptops]);   
     }
 
+    function add()
+    {
+        return view('laptop-add');
+    }
+
 }
