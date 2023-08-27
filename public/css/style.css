@@ -2,8 +2,13 @@
     height: 100vh;   
 }
 
+.navbar {
+    background: #527293;
+    color: white;
+}
+
 .sidebar {
-    background: rgb(94, 94, 94);
+    background: #527293;
     color: white;
 }
 
@@ -17,12 +22,12 @@
 }
 
 .sidebar a:hover{
-    background: #000 ;
+    background: #3e566e;
 }
 
 .active {
-    background: #000;
-    border-right: solid 8px orange;
+    background: #3e566e;
+    border-right: solid 8px #FFDBBF;
 }
 
 .card-data {

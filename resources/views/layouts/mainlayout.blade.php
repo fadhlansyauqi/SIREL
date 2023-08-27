@@ -10,7 +10,7 @@
     </head>
     <body>
         <div class="main d-flex flex-column justify-content-between">
-            <nav class="navbar navbar-dark navbar-expand-lg bg-primary">
+            <nav class="navbar navbar-dark navbar-expand-lg ">
                 <div class="container-fluid">
                     
                     <a class="navbar-brand" href="#">SIREL</a>

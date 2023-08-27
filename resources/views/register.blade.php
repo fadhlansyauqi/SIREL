@@ -9,16 +9,30 @@
 
 </head>
 <style>
+     body {
+        background-image: url({{ asset('images/bg-sirel-register.png') }});
+    }
     .main {
         height: 100vh;
     }
     .register-box {
         width: 500px;
-        border: solid 1px;
+        border: solid 1px white;
         padding: 30px;
+        background: white;
+        border-radius: 10px;
     }
     form div {
         margin-bottom: 15px;
+    }
+    .btn {
+        background: #527293;
+        color: white;
+    }
+
+    .btn:hover {
+        background: #3e566e;
+        color: white;
     }
 </style>
 <body>
@@ -59,10 +73,10 @@
                     <textarea name="address" id="address" class="form-control" rows="5"d></textarea>
                 </div>
                 <div>
-                    <button type="submit" class="btn btn-primary form-control">Register</button>
+                    <button type="submit" class="btn form-control">Register</button>
                 </div>
                 <div class="text-center">
-                Sudah punya akun? <a href="login">Login</a>
+                Sudah punya akun? <a href="login" style="color: #527293">Login</a>
                 </div>
             </form>
         </div>
