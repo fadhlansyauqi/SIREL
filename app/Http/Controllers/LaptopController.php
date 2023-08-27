@@ -18,4 +18,9 @@ class LaptopController extends Controller
         return view('laptop-add');
     }
 
+    function store(Request $request)
+    {
+        $laptop = Laptop::create($request->all());
+        return redirect('laptops');
+    }
 }
